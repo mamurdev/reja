@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="frame">
+      <div class="main_frame">
+        <div class="left_frame">
+          <div class="left-1">
+            <div class="left-1-1">
+              <img src="images/Profile.png" width="156px" height="135" />
+            </div>
+            <div class="left-1-2"><%=user.name%></div>
+            <div class="left-1-3"><%=user.profession %></div>
+            <div class="left-icons">
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/icons-dribbble.svg" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/icons-facebook.svg" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/icons-instagram.svg" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/icons-linkedin.svg" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/icons-twitter.svg" class="icon-1" />
+                </div>
+              </a>
+              <a href="" class="link_href">
+                <div class="icon">
+                  <img src="icon/icons-Youtube.svg" class="icon-1" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left-2">
+            <div class="left-2-1">
+              <div class="label">Age:</div>
+              <div class="value"><%=user.age %></div>
+            </div>
+            <div class="left-2-1">
+              <div class="label">Residence:</div>
+              <div value><%=user.residence%></div>
+            </div>
+            <div class="left-2-1">
+              <div class="label">Available:</div>
+              <div style="color: green">Available</div>
+            </div>
+            <div class="left-2-1">
+              <div class="label">Address:</div>
+              <div value><%=user.address %></div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left-3">
+            <div class="main-3">
+              <h5 class="lang-1">Languages</h5>
+              <div class="left-3-3">
+                Uzbek:
+                <div class="left3-num">100%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+              <div class="left-3-3">
+                Korean:
+                <div class="left3-num">40%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 40%"></div>
+              </div>
+              <div class="left-3-3">
+                English:
+                <div class="left3-num">80%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left-4">
+            <div class="main-4">
+              <h5 class="skills">Skills</h5>
+              <div class="left-3-3">
+                HTML:
+                <div class="left3-num">100%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 100%"></div>
+              </div>
+              <div class="left-3-3">
+                CSS:
+                <div class="left3-num">75%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+              <div class="left-3-3">
+                JS:
+                <div class="left3-num">70%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 70%"></div>
+              </div>
+              <div class="left-3-3">
+                Node.js:
+                <div class="left3-num">50%</div>
+              </div>
+              <div class="progress">
+                <div class="progress-fill" style="width: 50%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left-5">
+            <div class="extra skills">
+              <h5 class="extra-head">Extra skills</h5>
+              <div class="left-5-icons">
+                <img src="icon/iconss.svg" width="15px" height="15px" />
+                <span class="add">bootstrap, mongodb</span>
+              </div>
+              <div class="left-5-icons">
+                <img src="icon/iconss.svg" width="15px" height="15px" />
+                <span class="add">sass, django</span>
+              </div>
+              <div class="left-5-icons">
+                <img src="icon/iconss.svg" width="15px" height="15px" />
+                <span class="add">flask, grapQL</span>
+              </div>
+              <div class="left-5-icons">
+                <img src="icon/iconss.svg" width="15px" height="15px" />
+                <span class="add">github , amazon</span>
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+        </div>
+        <div class="mid_frame">
+          <div class="hero-section">
+            <div class="content">
+              <div class="text">
+                <h1>Software Engineer</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                  volutpat feugiat placerat lobortis.
+                </p>
+                <button>Hire Me</button>
+              </div>
+
+              <div class="person">
+                <img src="box_images/image.png" alt="person" />
+              </div>
+            </div>
+          </div>
+          <div class="mid-frame">
+            <div class="services-section">
+              <h2 class="services-title">My Services</h2>
+              <p class="services-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                volutpat feugiat placerat lobortis.
+              </p>
+            </div>
+          </div>
+          <div class="bottom -frame">
+            <div class="cards-container">
+              <div class="card">
+                <img src="menu_icon/image.png" alt="" />
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="card">
+                <img src="menu_icon/image copy.png" alt="" />
+                <h3>UI/UX design</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="card">
+                <img src="menu_icon/image copy 2.png" alt="" />
+                <h3>Sound design</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="card">
+                <img src="menu_icon/image copy 3.png" alt="" />
+                <h3>Game Design</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="card">
+                <img src="menu_icon/image copy 4.png" alt="" />
+                <h3>Photography</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="card">
+                <h3>Advertising</h3>
+                <p>
+                  Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Vitae nulla diam in ac dictum a
+                  urna viverra morbi.
+                </p>
+                <p style="color: #ffa500; font-weight: bold;">Order Now  ></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right_frame">
+          <div class="sidebar">
+            <div class="iconn top-iconn">
+              <img src="btn_icon/moon.png" width="30px" height="30ps" />
+            </div>
+            <div class="middle-icons">
+              <div class="iconn popup-parent">
+                <img src="btn_icon/h.png" alt="" width="20px" height="20ps" />
+                <span class="popup">home</span>
+              </div>
+              <div class="iconn">
+                <img
+                  src="btn_icon/paper.png"
+                  alt=""
+                  width="20px"
+                  height="20ps"
+                />
+              </div>
+              <div class="iconn">
+                <img
+                  src="btn_icon/student.png"
+                  alt=""
+                  width="20px"
+                  height="20px"
+                />
+              </div>
+              <div class="iconn">
+                <img
+                  src="btn_icon/briefcase.png"
+                  alt=""
+                  width="20px"
+                  height="20ps"
+                />
+              </div>
+              <div class="iconn">
+                <img
+                  src="btn_icon/rectang.png"
+                  alt=""
+                  width="20px"
+                  height="20px"
+                />
+              </div>
+              <div class="iconn">
+                <img
+                  src="btn_icon/massage.png"
+                  alt=""
+                  width="20px"
+                  height="20px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

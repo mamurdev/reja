@@ -4,6 +4,16 @@ const express = require("express");
 const res = require("express/lib/response");
 const app = express();
 const http = require("http");
+const fs = require("fs");
+
+fs.readFile("database/user.json", "utf8", (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  }
+  {
+    user = JSON.parse(data);
+  }
+});
 
 // 1: Kirish Code
 app.use(express.static("public"));
@@ -19,6 +29,10 @@ app.set("view engine", "ejs");
 // 4: Routing Code
 app.get("/", function (req, res) {
   res.render("xarid");
+});
+
+app.get("/author", function (req, res) {
+  res.render("author", { user: user });
 });
 
 app.post("/create-item", (req, res) => {
