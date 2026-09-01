@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 
 // 4: Routing Code
 app.get("/", function (req, res) {
-  res.render("xarid");
+  res.render("reja");
 });
 
 app.get("/author", function (req, res) {
@@ -42,5 +42,5 @@ app.post("/create-item", (req, res) => {
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The server is running good on port: ${PORT}`);
+  console.log(`The server is running good on port: ${PORT}, https://localhost:${PORT}`);
 });
