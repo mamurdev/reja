@@ -6,15 +6,13 @@ const app = express();
 const fs = require("fs");
 
 // MongoDB Connection
-const db = require('./server').db();
+const db = require("./server").db('reja');
 
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
     console.log("ERROR:", err);
   }
-  {
-    user = JSON.parse(data);
-  }
+  let user = JSON.parse(data);
 });
 
 // 1: Kirish Code
@@ -29,17 +27,33 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4: Routing Code
-app.get("/", function (req, res) {
-  res.render("reja");
-});
-
 app.get("/author", function (req, res) {
   res.render("author", { user: user });
 });
 
 app.post("/create-item", (req, res) => {
-  res.json({ test: "success" });
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log("Error", err);
+      res.end("something went wrong");
+    } else {
+      res.end("successfully added");
+    }
+  });
 });
 
+app.get("/", function (req, res) {
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log("Error", err);
+        res.end("something went wrong");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
+});
 
 module.exports = app;
