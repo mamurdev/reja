@@ -3,8 +3,10 @@ console.log("Server is Running");
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
-const http = require("http");
 const fs = require("fs");
+
+// MongoDB Connection
+const db = require('./server').db();
 
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
@@ -39,8 +41,5 @@ app.post("/create-item", (req, res) => {
   res.json({ test: "success" });
 });
 
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-  console.log(`The server is running good on port: ${PORT}, https://localhost:${PORT}`);
-});
+
+module.exports = app;
