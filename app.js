@@ -34,18 +34,14 @@ app.get("/author", function (req, res) {
 app.post("/create-item", (req, res) => {
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-    if (err) {
-      console.log("Error", err);
-      res.end("something went wrong");
-    } else {
-      res.end("successfully added");
-    }
+   res.json(data.ops[0])
+   
   });
 });
 
 app.get("/", function (req, res) {
   db.collection("plans")
-    .find()
+    .find()       
     .toArray((err, data) => {
       if (err) {
         console.log("Error", err);
