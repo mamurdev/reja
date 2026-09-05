@@ -1,18 +1,3 @@
-// MITASK-B
-function countDigits(str) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= '0' && str[i] <= '9') {
-      count += 1;
-    }
-  }
-  return count;
-}
-
-countDigits("ad2a54y79wet0sfgb9");
-
-
-
 // MITASK-A
 function countLetter(letter, word) {
   let identicals = 0;
