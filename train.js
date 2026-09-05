@@ -1,3 +1,17 @@
+// MITASK-C
+
+// MITASK-B
+function countDigits(str) {
+  let digits = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= "0" && str[i] <= "9") {
+      digits++;
+    }
+  }
+
+  return digits;
+}
+
 // MITASK-A
 function countLetter(letter, word) {
   let identicals = 0;

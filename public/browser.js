@@ -10,10 +10,10 @@ function itemTemplate(item) {
         data-id="${item._id}"
         class="edit-me btn btn-secondary btn-sm mr-1"
       >
-        Ozgartirish
+        Edit
       </button>
       <button data-id="${item._id}" class="delete-me btn btn-danger btn-sm">
-        Ochirish
+        Delete
       </button>
     </div>
   </li>`;
@@ -29,11 +29,30 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     .then((response) => {
       document
         .getElementById("item-list")
-        .insertAdjacentHTML('beforeend', itemTemplate(response.data));
+        .insertAdjacentHTML("beforeend", itemTemplate(response.data));
       createField.value = "";
       createField.focus();
     })
     .catch((err) => {
-        console.log("Try again");
+      console.log("Try again");
     });
+});
+
+document.addEventListener("click", function (e) {
+  console.log(e);
+  if (e.target.classList.contains("delete-me")) {
+    console.log(e.target);
+    if (confirm("Are you sure to delete?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Try again");
+        });
+    }
+  }
+  if (e.target.classList.contains("edit-me")) {
+  }
 });
