@@ -1,22 +1,75 @@
+// MITASK-C
+class Shop {
+  constructor(bread, noodles, coke) {
+    this.bread = bread;
+    this.noodles = noodles;
+    this.coke = coke;
+  }
+
+  stock() {
+    console.log(
+      `There's ${this.bread} breads, ${this.noodles} noodles and ${this.coke} cokes`,
+    );
+  }
+  sell(item, num) {
+    if (item === "bread") {
+      this.bread -= num;
+    } else if (item === "noodles") {
+      this.noodles -= num;
+    } else if (item === "coke") {
+      this.coke -= num;
+    }
+  }
+  receive(item, num) {
+    if (item === "bread") {
+      this.bread += num;
+    } else if (item === "noodles") {
+      this.noodles += num;
+    } else if (item === "coke") {
+      this.coke += num;
+    }
+  }
+}
+
+const shop = new Shop(4, 5, 2);
+shop.stock();
+
+shop.sell("bread", 3);
+shop.receive("coke", 4);
+shop.stock();
+
+// MITASK-B
+function countDigits(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= "0" && str[i] <= "9") {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+// countDigits("ad2a54y79wet0sfgb9");
+
 // MITASK-A
 function countLetter(letter, word) {
   let identicals = 0;
-  for(let i = 0; i < word.length; i++) {
+  for (let i = 0; i < word.length; i++) {
     if (word[i] === letter) {
-      identicals += 1
+      identicals += 1;
     }
-  };
+  }
   return identicals;
-};
+}
 
-console.log("we have these many identical letters:", countLetter("e", "devex academy"));
-
+// console.log(
+//   "we have these many identical letters:",
+//   countLetter("e", "devex academy"),
+// );
 
 // ========================================================
 
-
-
-console.log("Jack Ma maslahatlari");
+// console.log("Jack Ma maslahatlari");
 
 const list = [
   "yaxshi talaba boling", // 0-20
@@ -59,8 +112,8 @@ async function maslahatBering(a) {
   else {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(list[5])
-      }, 5000) 
+        resolve(list[5]);
+      }, 5000);
     });
     // setTimeout(function () {
     //   callback(null, list[5]);
@@ -79,7 +132,6 @@ async function maslahatBering(a) {
 //   });
 // console.log("Passed here 1");
 
-
 // async/await
 async function run() {
   let javob = await maslahatBering(25);
@@ -89,4 +141,4 @@ async function run() {
   javob = await maslahatBering(45);
   console.log(javob);
 }
-run();
+// run();
