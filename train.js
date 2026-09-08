@@ -1,3 +1,13 @@
+// MITASK-D
+function checkContent(str1, str2) {
+  let string1 = String(str1).split('').sort().join('')
+  let string2 = String(str2).split('').sort().join('')
+  if(string1 === string2) {
+    return true
+  } else return false
+}
+console.log(checkContent('mitgroup', 'gmtiprou'));
+
 // MITASK-C
 class Shop {
   constructor(bread, noodles, coke) {
@@ -7,9 +17,7 @@ class Shop {
   }
 
   stock() {
-    console.log(
-      `There's ${this.bread} breads, ${this.noodles} noodles and ${this.coke} cokes`,
-    );
+
   }
   sell(item, num) {
     if (item === "bread") {

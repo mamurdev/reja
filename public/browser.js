@@ -54,5 +54,33 @@ document.addEventListener("click", function (e) {
     }
   }
   if (e.target.classList.contains("edit-me")) {
+    let userInput = prompt(
+      "Make a Change",
+      e.target.parentElement.parentElement.querySelector(".item-text")
+        .innerHTML,
+    );
+    if (userInput) {
+      axios
+        .post("/edit-item", {
+          id: e.target.getAttribute("data-id"),
+          new_input: userInput,
+        })
+        .then((response) => {
+          e.target.parentElement.parentElement.querySelector(
+            ".item-text",
+          ).innerHTML = userInput;
+        })
+        .catch((err) => {
+          console.log("Try againnn");
+        });
+    }
   }
 });
+
+document.getElementById("delete-all").addEventListener("click", function () {
+  axios.post("/delete-all", { delete_all: true }).then((response) => {
+    document.location.reload();
+  });
+});
+
+
