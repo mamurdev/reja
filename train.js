@@ -1,3 +1,10 @@
+// MITASK-E
+function reversify(str) {
+  let reversed = str.split('').reverse().join('')
+  return reversed
+}
+console.log(reversify("hello"));
+
 // MITASK-D
 function checkContent(str1, str2) {
   let string1 = String(str1).split('').sort().join('')
