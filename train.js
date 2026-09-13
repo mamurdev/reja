@@ -1,19 +1,32 @@
+// MITASK-D
+function findDoublers(str) {
+  let exists = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in exists) {
+      return true;
+    } else exists[str[i]] = true;
+  }
+  return false;
+}
+let mitaskd = findDoublers("hello");
+console.log(mitaskd);
+
 // MITASK-E
 function reversify(str) {
-  let reversed = str.split('').reverse().join('')
-  return reversed
+  let reversed = str.split("").reverse().join("");
+  return reversed;
 }
-console.log(reversify("hello"));
+// console.log(reversify("hello"));
 
 // MITASK-D
 function checkContent(str1, str2) {
-  let string1 = String(str1).split('').sort().join('')
-  let string2 = String(str2).split('').sort().join('')
-  if(string1 === string2) {
-    return true
-  } else return false
+  let string1 = String(str1).split("").sort().join("");
+  let string2 = String(str2).split("").sort().join("");
+  if (string1 === string2) {
+    return true;
+  } else return false;
 }
-console.log(checkContent('mitgroup', 'gmtiprou'));
+// console.log(checkContent('mitgroup', 'gmtiprou'));
 
 // MITASK-C
 class Shop {
@@ -23,9 +36,7 @@ class Shop {
     this.coke = coke;
   }
 
-  stock() {
-
-  }
+  stock() {}
   sell(item, num) {
     if (item === "bread") {
       this.bread -= num;
