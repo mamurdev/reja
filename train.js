@@ -1,9 +1,24 @@
+// MITASK-H
+function countVowels(str) {
+  let count = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+  return count;
+}
+
+const mistaskh = countVowels("hello world");
+console.log(mistaskh);
+
 // MITASK-G
 function getHighestIndex(arr) {
   let max = arr[0];
   let maxIndex = 0;
-  for(let i = 0; i < arr.length; i++) {
-    if(arr[i] > max) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
       max = arr[i];
       maxIndex = i;
     }
@@ -12,8 +27,7 @@ function getHighestIndex(arr) {
 }
 
 let mitaskg = getHighestIndex([42, 17, 78, 31]);
-console.log("highest index is",mitaskg);
-
+// console.log("highest index is", mitaskg);
 
 // MITASK-F
 function findDoublers(str) {
